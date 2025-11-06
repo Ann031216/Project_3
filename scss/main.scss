@@ -1736,30 +1736,31 @@ body {
   gap: 15px;
 }
 
-&__social {
+.footer__social {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: #1a3e3e;
   transition: background 0.3s ease, transform 0.2s ease;
+  color: #fff;
 
   img {
-    width: 18px;
-    height: 18px;
-    filter: brightness(0) invert(1); 
+    width: 36px;
+    height: 36px;
     transition: filter 0.3s ease;
   }
 
   &:hover {
     background: #f2be22;
     transform: translateY(-2px);
+    color: #1a3e3e; 
 
-    img {
+    /*img {
       filter: brightness(0); 
-    }
+    }*/
   }
 }
 
@@ -1869,3 +1870,4 @@ body {
     }
   }
 }
+
