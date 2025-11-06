@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vershyna_Khomiak</title>
+  <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<link rel="icon" href="./assets/favicon/favicon-16x16.png" type="image/x-icon">
+<link rel="shortcut icon" href="./assets/favicon/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+  
+  <header class="header">
+    <!-- Логотип, меню, кнопка -->
+      <div class="container">
+                <div class="header__body">
+                    <div class="header__logo">
+                        <a href="#" class="logo__link">
+                            <img src="./assets/svg/logo_mount.svg" alt="" class="logo__img">
+                        </a>
+                    </div>
+                      <nav class="header__menu">
+                        <ul class="header__list">
+                            <li class="header__item">
+                                <a href="#programm" class="header__link">Програма туру</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#projects" class="header__link">Вартість</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#raiting" class="header__link">Популярні напрямки</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#blog" class="header__link">Блог</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#gallery" class="header__link">Галерея</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#contacts" class="header__link">Контакти</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__btn__wrap">
+                        <button type="submit" class="header__btn">Консультація</button>
+                    </div>
+                    <div class="header__burger">
+                        <span></span>
+                    </div>
+          </div>
+          <div class="header__overlay"></div>
+  </header>
+
+  <main>
+ 
+  <section class="upper__section">
+        <h1 class="upper__title">Насолоджуйся прогулянкою в горах <br> із командою однодумців</h1>
+  <div class="form">
+  <form class="upper__form">
+
+    <!-- Вибір локації -->
+    <div class="form__group">
+       <div class="custom-select" data-name="location">
+    <div class="custom-select__selected">Оберіть локацію</div>
+    <ul class="custom-select__options">
+      <li data-value="ukraine">Україна</li>
+      <li data-value="poland">Польща</li>
+      <li data-value="slovakia">Словаччина</li>
+      <li data-value="hungary">Угорщина</li>
+      <li data-value="romania">Румунія</li>
+      <li data-value="czech">Чехія</li>
+      <li data-value="austria">Австрія</li>
+    </ul>
+  </div>
+  <span class="form__help-text">Виберіть зі списку</span>
+
+  <!-- прихований справжній select для форми -->
+  <select id="location" name="location" hidden>
+    <option value="">Оберіть локацію</option>
+    <option value="ukraine">Україна</option>
+    <option value="poland">Польща</option>
+    <option value="slovakia">Словаччина</option>
+    <option value="hungary">Угорщина</option>
+    <option value="romania">Румунія</option>
+    <option value="czech">Чехія</option>
+    <option value="austria">Австрія</option>
+  </select>
+</div>
+
+    <!-- Діапазон дат -->
+    <div class="form__group">
+      <!-- <label for="start-date" class="form__label">Дата подорожі</label> -->
+      <div class="form__date-wrapper">
+        <input type="date" id="start-date" class="form__input">
+        <span class="form__date-separator">-</span>
+        <input type="date" id="end-date" class="form__input">
+      </div>
+      <span class="form__help-text">Вкажіть діапазон</span>
+    </div>
+
+    <!-- Кількість учасників -->
+    <div class="form__group">
+      <!-- <label for="participants" class="form__label">К-сть учасників</label> -->
+      <input type="number" id="participants" class="form__input" min="4" max="12" placeholder="Кількість учасників">
+      <span class="form__help-text">Мінімум 4 людини</span>
+    </div>
+
+    <button type="submit" class="form__button">Знайти програму</button>
+    <!-- for API -->
+    <div id="programResults" class="program__results hidden"></div>
+  </form>
+
+</div>
+
+    
+  </section>
+
+<section id="programm" class="adv">
+  <div class="adv__media">
+    <div class="adv__video-wrapper">
+      <iframe
+        class="adv__video"
+        src="https://www.youtube.com/embed/EvKueQnsdlw?rel=0&mute=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="adv__video-overlay"></div>
+    </div>
+
+    <!-- Модальне вікно -->
+    <div class="adv__modal">
+      <div class="adv__modal-content">
+        <span class="adv__close">&times;</span>
+        <iframe
+          id="advVideoModal"
+          src=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="adv__info">
+    <h3 class="subtitle">про наш трейл</h3>
+    <h2 class="title">Досліди усі гірські масиви світу з нами</h2>
+    <p>
+      Карпати розташовані на заході України. Ця гірська система знаходиться не лише на території України,
+      а й таких країн як Угорщина, Польща, Словаччина, Румунія, Сербія та Австрія. 
+      Чисте повітря, краєвиди, гірські схили, цілющі властивості мінеральних вод...
+    </p>
+    <button class="adv__btn">Програма туру</button>
+  </div>
+</section>
+    
+  <!-- Projects / програма тура -->
+  <section id="projects" class="projects">
+    <div class="projects__container">
+     <div class="projects__content">
+       <h3 class="subtitle">наша пропозиція</h3>
+       <h2 class="title">Найкращі програми для тебе</h2>
+        <p>
+          Карпати розташовані на заході України. Ця гірська система знаходиться не лише на території України,
+          а й таких країн як Угорщина, Польща, Словаччина, Румунія, Сербія та Австрія.  
+        </p>
+        <div class="projects__card">
+         <h4 class="projects__card__title">Досвідчений гід</h4>
+         <p>Професійні гіди з великим досвідом у горах.Професійні гіди з великим досвідом у горах.</p>
+        </div>
+          <div class="projects__card">
+         <h4 class="projects__card__title">Безпечна подорож</h4>
+         <p>Ми дбаємо про комфорт і безпеку кожного учасника. Ми дбаємо про комфорт і безпеку кожного учасника.</p>
+        </div>
+        <div class="projects__card">
+         <h4 class="projects__card__title">Приємні ціни</h4>
+         <p>Оптимальні варіанти турів під будь-який бюджет. Оптимальні варіанти турів під будь-який бюджет.</p>
+        </div>
+        
+      <button class="projects__btn">Вартість програм</button>
+     </div>
+     <div class="projects__img">
+        <div class="projects__grid">
+      <img src="./assets/img/projects_1.jpg" alt="Тур 1" />
+      <img src="./assets/img/projects_2.jpg" alt="Тур 2" />
+      <img src="./assets/img/projects_3.jpg" alt="Тур 3" />
+      <img src="./assets/img/projects_4.jpg" alt="Тур 4" />
+    </div>
+     </div>
+     </div>
+  </section>
+
+  <!-- About / Інформація -->
+   <section id="raiting" class="rating">
+  <h3 class="rating__subtitle">за версією туристів</h3>
+  <h2 class="rating__title">Популярні напрямки</h2>
+
+  <div class="swiper rating__slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide rating__item">
+        <div class="rating__img-wrap">
+          <img src="./assets/img/raiting_1.jpg" alt="Tour 1" />
+          <div class="rating__star">
+            <img src="./assets/svg/raiting.svg" alt="star" />
+            4.9
+          </div>
+          <div class="rating__overlay">
+            <div class="rating__overlay-head">
+              <span>Greece</span>
+              <span class="rating__price">$900</span>
+            </div>
+            <div class="rating__overlay-body">
+              <p>Enjoy a relaxing trip to Greece with scenic views and culture.</p>
+              <button class="rating__btn">Book now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="swiper-slide rating__item">
+        <div class="rating__img-wrap">
+          <img src="./assets/img/raiting_2.jpg" alt="Tour 2" />
+          <div class="rating__star">
+            <img src="./assets/svg/raiting.svg" alt="star" />
+            4.5
+          </div>
+          <div class="rating__overlay">
+            <div class="rating__overlay-head">
+              <span>Greece</span>
+              <span class="rating__price">$900</span>
+            </div>
+            <div class="rating__overlay-body">
+              <p>Enjoy a relaxing trip to Greece with scenic views and culture.</p>
+              <button class="rating__btn">Book now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide rating__item">
+        <div class="rating__img-wrap">
+          <img src="./assets/img/raiting_3.jpg" alt="Tour 3" />
+          <div class="rating__star">
+            <img src="./assets/svg/raiting.svg" alt="star" />
+            5.0
+          </div>
+          <div class="rating__overlay">
+            <div class="rating__overlay-head">
+              <span>Greece</span>
+              <span class="rating__price">$900</span>
+            </div>
+            <div class="rating__overlay-body">
+              <p>Enjoy a relaxing trip to Greece with scenic views and culture.</p>
+              <button class="rating__btn">Book now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <button class="rating__main-btn">See all tours</button>
+</section>
+
+<section id="blog" class="blog">
+  <h3 class="blog__subtitle">ділимось враженнями</h3>
+  <h2 class="blog__title">Блог про подорожі</h2>
+
+  <div class="blog__cards">
+    <div class="blog__card">
+      <div class="blog__img-wrap">
+        <img src="./assets/img/blog_1.jpg" alt="Blog 1" class="blog__img" />
+      </div>
+      <div class="blog__content">
+        <h4 class="blog__card-title">10 must-visit places in the Carpathians</h4>
+        <p class="blog__card-text">Discover the hidden gems of the Carpathian Mountains with our top 10 must-visit places.</p>
+        <div class="blog__info">
+          <span class="blog__date">10.09.2025</span>
+          <a href="#" class="blog__card-link">Read more →</a>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="blog__card">
+      <div class="blog__img-wrap">
+        <img src="./assets/img/blog_2.jpg" alt="Blog 2" class="blog__img" />
+      </div>
+      <div class="blog__content">
+        <h4 class="blog__card-title">10 must-visit places in the Carpathians</h4>
+        <p class="blog__card-text">Discover the hidden gems of the Carpathian Mountains with our top 10 must-visit places.</p>
+        <div class="blog__info">
+          <span class="blog__date">12.09.2025</span>
+          <a href="#" class="blog__card-link">Read more →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog__card">
+      <div class="blog__img-wrap">
+        <img src="./assets/img/blog_3.jpg" alt="Blog 3" class="blog__img" />
+      </div>
+      <div class="blog__content">
+        <h4 class="blog__card-title">10 must-visit places in the Carpathians</h4>
+        <p class="blog__card-text">Discover the hidden gems of the Carpathian Mountains with our top 10 must-visit places.</p>
+        <div class="blog__info">
+          <span class="blog__date">14.09.2025</span>
+          <a href="#" class="blog__card-link">Read more →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog__card">
+      <div class="blog__img-wrap">
+        <img src="./assets/img/blog_4.jpg" alt="Blog 4" class="blog__img" />
+      </div>
+      <div class="blog__content">
+        <h4 class="blog__card-title">10 must-visit places in the Carpathians</h4>
+        <p class="blog__card-text">Discover the hidden gems of the Carpathian Mountains with our top 10 must-visit places.</p>
+        <div class="blog__info">
+          <span class="blog__date">16.09.2025</span>
+          <a href="#" class="blog__card-link">Read more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+ </section>
+
+<section id="gallery" class="gallery">
+  <h3 class="gallery__subtitle">Наші подорожі</h3>
+  <h2 class="gallery__title">Галерея моментів</h2>
+
+  <!-- Грід (десктоп) -->
+  <div class="gallery__grid">
+    <a href="./assets/img/gallery_1.jpg" class="gallery__item gallery__item--1">
+      <img src="./assets/img/gallery_1.jpg" alt="Gallery 1" loading="lazy"/>
+    </a>
+    <a href="./assets/img/gallery_2.jpg" class="gallery__item gallery__item--2">
+      <img src="./assets/img/gallery_2.jpg" alt="Gallery 2" loading="lazy"/>
+    </a>
+    <a href="./assets/img/gallery_3.jpg" class="gallery__item gallery__item--3">
+      <img src="./assets/img/gallery_3.jpg" alt="Gallery 3" loading="lazy"/>
+    </a>
+    <a href="./assets/img/gallery_4.jpg" class="gallery__item gallery__item--4">
+      <img src="./assets/img/gallery_4.jpg" alt="Gallery 4" loading="lazy"/>
+    </a>
+    <a href="./assets/img/gallery_5.jpg" class="gallery__item gallery__item--5">
+      <img src="./assets/img/gallery_5.jpg" alt="Gallery 5" loading="lazy"/>
+    </a>
+    <a href="./assets/img/gallery_6.jpg" class="gallery__item gallery__item--6">
+      <img src="./assets/img/gallery_6.jpg" alt="Gallery 6" loading="lazy"/>
+    </a>
+  </div>
+
+  <!-- Слайдер (планшет + мобільний) -->
+  <div class="gallery__slider swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><a href="./assets/img/gallery_1.jpg"><img src="./assets/img/gallery_1.jpg" alt="" loading="lazy"></a></div>
+      <div class="swiper-slide"><a href="./assets/img/gallery_2.jpg"><img src="./assets/img/gallery_2.jpg" alt="" loading="lazy"></a></div>
+      <div class="swiper-slide"><a href="./assets/img/gallery_3.jpg"><img src="./assets/img/gallery_3.jpg" alt="" loading="lazy"></a></div>
+      <div class="swiper-slide"><a href="./assets/img/gallery_4.jpg"><img src="./assets/img/gallery_4.jpg" alt="" loading="lazy"></a></div>
+      <div class="swiper-slide"><a href="./assets/img/gallery_5.jpg"><img src="./assets/img/gallery_5.jpg" alt=""loading="lazy"></a></div>
+      <div class="swiper-slide"><a href="./assets/img/gallery_6.jpg"><img src="./assets/img/gallery_6.jpg" alt="" loading="lazy"></a></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+  <section class="subscribe">
+  <div class="subscribe__container">
+    <div class="subscribe__text">
+      <h3 class="subscribe__subtitle">актуально</h3>
+      <h2 class="subscribe__title">
+        Отримуй корисну інформацію про наші подорожі
+      </h2>
+    </div>
+    <div class="subscribe__form-wrap">
+      <form class="subscribe__form">
+        <label for="email" class="subscribe__label">Введіть імейл</label>
+        <div class="subscribe__input-group">
+          <input
+            type="email"
+            id="email"
+            class="subscribe__input"
+            placeholder="name@domain.com"
+            required
+          />
+          <button type="submit" class="subscribe__button">Підписатись на новини</button>
+        </div>
+      </form>
+      <p class="subscribe__info">
+        Підписуючись на новини, ви погоджуєтесь із
+        <a href="#" class="subscribe__link">правилами розсилки</a>
+        та обробкою персональних даних.
+      </p>
+    </div>
+  </div>
+
+  <div id="subscribe-toast" class="subscribe-toast"></div>
+</section>
+
+</main>
+  
+  <footer id="contacts" class="footer">
+    <div class="footer__wrap">
+    <div class="footer__col footer__col--about">
+      <h3 class="footer__logo">Подорожуй зараз</h3>
+      <p class="footer__desc">
+        Ми організовуємо незабутні подорожі та допомагаємо вам відкривати світ легко й комфортно.
+      </p>
+
+      <div class="footer__contacts">
+        <a href="mailto:info@travelnow.ua" class="footer__contact">info@travelnow.ua</a>
+        <a href="tel:+380991234567" class="footer__contact">+38 (099) 123-45-67</a>
+      </div>
+
+      <div class="footer__socials">
+  <a href="#" class="footer__social" aria-label="Telegram">
+    <img src="./assets/svg/telegram.svg" alt="Telegram">
+  </a>
+  <a href="#" class="footer__social" aria-label="Skype">
+    <img src="./assets/svg/skype.svg" alt="Skype">
+  </a>
+  <a href="#" class="footer__social" aria-label="Pinterest">
+    <img src="./assets/svg/pinterest.svg" alt="Pinterest">
+  </a>
+</div>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Наші послуги</h4>
+      <ul class="footer__menu">
+        <li><a href="#">Тури по Україні</a></li>
+        <li><a href="#">Закордонні подорожі</a></li>
+        <li><a href="#">Екскурсії </a></li>
+        <li><a href="#">Активний відпочинок</a></li>
+        <li><a href="#">Корпоративні тур</a></li>
+        <li><a href="#">Подарункові сертифікати</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Важливо для подорожей</h4>
+      <ul class="footer__menu">
+        <li><a href="#">Віза та документи</a></li>
+        <li><a href="#">Страхування</a></li>
+        <li><a href="#">Поради мандрівникам</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Нижня смуга -->
+  <div class="footer__bottom">
+    <p>© 2025 TravelNow. Власник: Іваненко Іван Іванович</p>
+    <a href="#">Політика обробки персональних даних</a>
+  </div>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/autoplay/lg-autoplay.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/fullscreen/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="./js/slider.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/burger.js"></script>
+<script src="./js/program.js"></script>
+<script src="./js/toast.js"></script>
+
+</body>
+</html>

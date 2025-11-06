@@ -1,0 +1,32 @@
+{
+  "tours": [
+    {
+      "name": "Карпати – Говерла",
+      "country": "ukraine",
+      "rating": "4.8",
+      "address": "Івано-Франківська область",
+      "image": "https://images.unsplash.com/photo-1549887534-3db1bd59dcca"
+    },
+    {
+      "name": "Татри – Закопане",
+      "country": "poland",
+      "rating": "4.6",
+      "address": "Малопольське воєводство",
+      "image": "https://images.unsplash.com/photo-1601471038184-7a4b85d6d095"
+    },
+    {
+      "name": "Альпи – Інсбрук",
+      "country": "austria",
+      "rating": "4.9",
+      "address": "Тіроль, Австрія",
+      "image": "https://images.unsplash.com/photo-1583864697784-99106f46fa7c"
+    },
+    {
+      "name": "Трансільванія – Брашов",
+      "country": "romania",
+      "rating": "4.7",
+      "address": "Карпати, Румунія",
+      "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e"
+    }
+  ]
+}
