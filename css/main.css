@@ -30,7 +30,6 @@ body {
   max-width: 1130px;
   margin: 0 auto;
   padding: 15px 0;
-  /*background: #423e3e;*/
 }
 
 .header {
@@ -278,9 +277,6 @@ body {
   border-radius: 4px;
   padding: 0 20px;
   box-sizing: border-box;
-  /*@media (max-width: 1024px) {
-    margin-left: 100px;
-  }*/
 }
 @media (max-width: 1373px) {
   .form {
@@ -299,8 +295,6 @@ body {
   gap: 24px;
   padding-top: 40px;
   /*--API--*/
-  /* ======= Ширина кожного поля ======= */
-  /* ======= ADAPTIVE ======= */
 }
 .upper__form .form__input,
 .upper__form .custom-select__selected {
@@ -320,9 +314,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  /* ======= Кастомний SELECT ======= */
-  /* ======= Поле NUMBER  ======= */
-  /* ======= Календар ======= */
+  /*  Кастомний SELECT */
+  /*  Календар  */
 }
 .upper__form .form__group .form__input {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -603,7 +596,7 @@ body {
   height: 526px;
   overflow: hidden;
 }
-.adv__media .adv__video { /*було .adv__video */
+.adv__media .adv__video {
   top: 145px;
   left: 140px;
   width: 350px;
@@ -994,7 +987,7 @@ body {
   color: #f2be22;
 }
 .rating__slider .swiper-pagination {
-  position: static; /* виносимо їх з overlay поверху вниз */
+  position: static;
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -1369,7 +1362,6 @@ body {
   padding: 60px 20px;
   position: relative;
   z-index: 2;
-  /* --- адаптив --- */
 }
 .subscribe .subscribe__container {
   max-width: 1180px;
@@ -1570,7 +1562,7 @@ body {
 .footer__wrap__social img {
   width: 18px;
   height: 18px;
-  filter: brightness(0) invert(1); /* білий колір */
+  filter: brightness(0) invert(1);
   transition: filter 0.3s ease;
 }
 .footer__wrap__social:hover {
@@ -1578,7 +1570,7 @@ body {
   transform: translateY(-2px);
 }
 .footer__wrap__social:hover img {
-  filter: brightness(0); /* чорний при наведенні */
+  filter: brightness(0);
 }
 .footer__wrap .footer__title {
   font-size: 20px;
@@ -1645,7 +1637,7 @@ body {
   .footer__wrap {
     flex-direction: column;
     gap: 40px;
-    align-items: flex-start; /* по лівому краю */
+    align-items: flex-start;
   }
   .footer .footer__col {
     width: 100%;

@@ -31,9 +31,7 @@ body {
     max-width: 1130px;
     margin: 0 auto;
     padding: 15px 0;
-    /*background: #423e3e;*/
-}
-
+  }
 
 .header {
   position: absolute;
@@ -62,8 +60,6 @@ body {
   &__menu {
     font-family: Nunito, sans-serif;
     font-size: 14px;
-  
-  
   }
 
   &__list {
@@ -97,13 +93,13 @@ body {
       background: rgba(26, 62, 62, 0.95);
       padding-top: 80px;
       padding-left: 20px;
-      gap: 15px; // зменшена відстань між пунктами
+      gap: 15px; 
       backdrop-filter: blur(4px);
       z-index: 9;
       transition: right 0.4s ease;
 
       &.active {
-        right: 0; // меню виїжджає
+        right: 0; 
       }
 
       .header__item a {
@@ -296,10 +292,6 @@ body {
     margin-left: 100px;
   }
 
-   /*@media (max-width: 1024px) {
-    margin-left: 100px;
-  }*/
-
   @media (max-width: 760px) {
     margin-left: 5px;
   }
@@ -347,7 +339,7 @@ body {
       }
     }
 
-    /* ======= Кастомний SELECT ======= */
+    /*  Кастомний SELECT */
     .custom-select {
       position: relative;
       width: 220px;
@@ -428,8 +420,7 @@ body {
       }
     }
 
-    /* ======= Поле NUMBER  ======= */
-    input[type="number"].form__input {
+   input[type="number"].form__input {
       color: #FDFDFD !important;
       background-color: transparent;
       -webkit-text-fill-color: #FDFDFD;
@@ -442,7 +433,7 @@ body {
       margin: 0;
     }
 
-    /* ======= Календар ======= */
+    /*  Календар  */
     .form__date-wrapper {
       display: flex;
       align-items: center;
@@ -550,8 +541,6 @@ body {
 
 .hidden { display: none; }
 
-
-  /* ======= Ширина кожного поля ======= */
   #location.form__input,
   .custom-select {
     width: 220px;
@@ -594,8 +583,6 @@ body {
      }
     }
   
-
-  /* ======= ADAPTIVE ======= */
   @media (max-width: 1220px) { 
     flex-direction: row;
     flex-wrap: wrap;
@@ -656,7 +643,7 @@ body {
       height: 526px; 
       overflow: hidden;
      }
-      .adv__video { /*було .adv__video */
+      .adv__video { 
       top: 145px;
       left: 140px;
       width: 350px;
@@ -689,7 +676,7 @@ body {
      iframe {
       width: 100%;
       height: 400px;
-      object-fit: cover; // щоб без чорних смуг
+      object-fit: cover; 
       z-index: 2;
       position: relative;
       border: none;
@@ -1071,16 +1058,16 @@ body {
     margin: 0 auto;
     padding: 20px 0 60px;
     overflow: hidden;
-    position: relative; //add
-    display: flex; //add
-    flex-direction: column; //add
-    align-items: center; //add
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 
 
     .swiper-wrapper {
       display: flex;
       align-items: stretch;
-      margin-bottom: 20px;//add
+      margin-bottom: 20px;
     }
 
     .swiper-slide {
@@ -1098,8 +1085,8 @@ body {
       }
     }
 
-    .swiper-pagination { //add
-      position: static; /* виносимо їх з overlay поверху вниз */
+    .swiper-pagination { 
+      position: static; 
       margin-top: 10px;
       display: flex;
       justify-content: center;
@@ -1109,15 +1096,15 @@ body {
     .swiper-pagination-bullet {
       background: #1a3e3e;
       opacity: 0.4;
-      width: 8px;//add
-      height: 8px;//add
-      transition: all 0.3s ease;//add
+      width: 8px;
+      height: 8px;
+      transition: all 0.3s ease;
     }
 
     .swiper-pagination-bullet-active {
       background: #f2be22;
       opacity: 1;
-      transform: scale(1.2);//add
+      transform: scale(1.2);
     }
   }
 
@@ -1282,7 +1269,6 @@ body {
     }
   }
 
- 
   @keyframes overlayFadeIn {
     0% {
       opacity: 0.5;
@@ -1393,7 +1379,6 @@ body {
       color: #f2be22;
     }
   }
-
   
   &.is-slider {
     .blog__cards {
@@ -1652,8 +1637,7 @@ body {
   transform: translateY(0);
 }
 
-  /* --- адаптив --- */
-  @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .subscribe__container {
       flex-direction: column;
       height: auto;
@@ -1688,7 +1672,6 @@ body {
   }
 }
 
-
 .footer {
   background: #1A3E3E;
   color: #fdfdfd;
@@ -1696,7 +1679,6 @@ body {
   position: relative;
   z-index: 1;
   
-
   &__wrap {
     display: flex;
     justify-content: center;
@@ -1767,7 +1749,7 @@ body {
   img {
     width: 18px;
     height: 18px;
-    filter: brightness(0) invert(1); /* білий колір */
+    filter: brightness(0) invert(1); 
     transition: filter 0.3s ease;
   }
 
@@ -1776,7 +1758,7 @@ body {
     transform: translateY(-2px);
 
     img {
-      filter: brightness(0); /* чорний при наведенні */
+      filter: brightness(0); 
     }
   }
 }
@@ -1838,14 +1820,13 @@ body {
     background: #18121E;
     color: #fff;
     text-align: center;
-    //padding: 15px 10px;
     margin-top: 100px;
     font-size: 14px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    //gap: 6px;
+    
 
     a {
       color: #f2be22;
@@ -1861,7 +1842,7 @@ body {
     &__wrap {
       flex-direction: column;
       gap: 40px;
-      align-items: flex-start; /* по лівому краю */
+      align-items: flex-start; 
     }
 
     .footer__col {
